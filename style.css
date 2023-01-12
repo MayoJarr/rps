@@ -1,0 +1,39 @@
+body {
+    background-image: url(img/venice.jpg);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2em;
+}
+.container{
+    display: grid;
+    grid-template: 200px 100px / repeat(3, 200px);
+    grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+    height: 700px;
+}
+.item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #333;
+    text-align: center;
+    color: #333;
+}
+.score, item{
+    width: 640px;
+    height: 100px;
+}
+button {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+}
+button:hover{
+    background: #eee;
+    color: black;
+}
