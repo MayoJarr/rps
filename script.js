@@ -16,6 +16,8 @@ function playRound(playerSelection, computerSelection)
 {
     const score = document.querySelector('#score');
 
+    const aiChoice = document.querySelector('.aiChoice');
+
     const gameOver = document.querySelector('.gameEnd');
     const over = document.createElement('over');
     over.classList.add('game');
@@ -23,50 +25,49 @@ function playRound(playerSelection, computerSelection)
 
     const container = document.querySelector('.container');
 
-    let gameEnd = false;
-
-    if (computerScore > 5 && playerScore > 5) score.innerHTML = "Reload the page to play again!";
-
     if(playerSelection===computerSelection){
 
         score.innerHTML = 'its a tie <br>' + playerScore + ":" + computerScore;
         //return "It's a tie!";
+        aiChoice.innerHTML = "Computer choice: </br>" + computerSelection;
 
      } else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
 
         playerScore += 1;
-        score.innerHTML ="You win! Rock beats scissors! <br>" + playerScore + ":" + computerScore;
+        score.innerHTML ="You score a point! Rock beats scissors! <br>" + playerScore + ":" + computerScore;
+        aiChoice.innerHTML = "Computer choice: </br>" + computerSelection;
 
      } else if (playerSelection == 'ROCK' && computerSelection == 'PAPER'){
 
         computerScore += 1;
-        score.innerHTML ="You lose! Paper beats rock! <br>" + playerScore + ":" + computerScore;
+        score.innerHTML ="Computer scores a point! Paper beats rock! <br>" + playerScore + ":" + computerScore;
+        aiChoice.innerHTML = "Computer choice: </br>" + computerSelection;
 
      } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK'){
 
         playerScore += 1;
-        score.innerHTML ="You win! Paper beats rock! <br>" + playerScore + ":" + computerScore;
+        score.innerHTML ="You score a point! Paper beats rock! <br>" + playerScore + ":" + computerScore;
+        aiChoice.innerHTML = "Computer choice: </br>" + computerSelection;
 
      } else if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS'){
 
         computerScore += 1;
-        score.innerHTML ="You lose! Scissors beats paper! <br>" + playerScore + ":" + computerScore;
+        score.innerHTML ="Computer scores a point! Scissors beats paper! <br>" + playerScore + ":" + computerScore;
+        aiChoice.innerHTML = "Computer choice: </br>" + computerSelection;
 
      } else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER'){
 
         playerScore += 1;
-        score.innerHTML ="You win! Scissors beats paper! <br>" + playerScore + ":" + computerScore;
+        score.innerHTML ="You score a point! Scissors beats paper! <br>" + playerScore + ":" + computerScore;
+        aiChoice.innerHTML = "Computer choice: </br>" + computerSelection;
 
      } else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK') {
 
         computerScore += 1;
-        score.innerHTML ="You lose! Rock beats scissors! <br>" + playerScore + ":" + computerScore;
+        score.innerHTML ="Computer scores a point! Rock beats scissors! <br>" + playerScore + ":" + computerScore;
+        aiChoice.innerHTML = "Computer choice: </br>" + computerSelection;
      }
 
-     if (playerScore >= 5 || computerScore >= 5){
-        gameEnd = true;
-     }
-     
     if (playerScore >= 5) {
         //container.style.cssText = "display: none;"
         over.style.cssText = "display: flex;";

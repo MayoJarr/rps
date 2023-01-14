@@ -60,3 +60,18 @@ img{
 button:active{
     background: #ddd;
 }
+.aiChoice{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-5%, -50%);
+    background: rgb(255, 255, 255, 1);
+    border-radius: 10px;
+    text-align: center;
+    color: #333;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
