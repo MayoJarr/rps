@@ -12,65 +12,75 @@ function getComputerChoice(){
         return 'SCISSORS';
     }
 }
-function getPlayerChoice(){
-    let playerSelection = prompt("Type your choice: ");
-    return playerSelection.toUpperCase();
-}
 function playRound(playerSelection, computerSelection)
 {
     const score = document.querySelector('#score');
-    let playerScore = 0;
-    let computerScore = 0;
+
+    const gameOver = document.querySelector('.gameEnd');
+    const over = document.createElement('over');
+    over.classList.add('game');
+    gameOver.append(over);
+
+    const container = document.querySelector('.container');
+
+    let gameEnd = false;
+
+    if (computerScore > 5 && playerScore > 5) score.innerHTML = "Reload the page to play again!";
 
     if(playerSelection===computerSelection){
-        console.log("tie")
-        score.innerHTML = 'its a tie';
+
+        score.innerHTML = 'its a tie <br>' + playerScore + ":" + computerScore;
         //return "It's a tie!";
+
      } else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
-        score.innerHTML ="You win! Rock beats scissors!";
 
         playerScore += 1;
-        computerScore -= 1;
+        score.innerHTML ="You win! Rock beats scissors! <br>" + playerScore + ":" + computerScore;
+
      } else if (playerSelection == 'ROCK' && computerSelection == 'PAPER'){
-        score.innerHTML ="You lose! Paper beats rock!";
 
         computerScore += 1;
-        playerScore -= 1;
+        score.innerHTML ="You lose! Paper beats rock! <br>" + playerScore + ":" + computerScore;
 
      } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK'){
-        score.innerHTML ="You win! Paper beats rock!";
 
         playerScore += 1;
-        computerScore -= 1;
+        score.innerHTML ="You win! Paper beats rock! <br>" + playerScore + ":" + computerScore;
 
      } else if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS'){
-        score.innerHTML ="You lose! Scissors beats paper!";
 
         computerScore += 1;
-        playerScore -= 1;
+        score.innerHTML ="You lose! Scissors beats paper! <br>" + playerScore + ":" + computerScore;
+
      } else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER'){
-        score.innerHTML ="You win! Scissors beats paper!";
 
         playerScore += 1;
-        computerScore -= 1;
+        score.innerHTML ="You win! Scissors beats paper! <br>" + playerScore + ":" + computerScore;
 
      } else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK') {
-        score.innerHTML ="You lose! Rock beats scissors!";
 
         computerScore += 1;
-        playerScore -= 1;
+        score.innerHTML ="You lose! Rock beats scissors! <br>" + playerScore + ":" + computerScore;
      }
-     console.log('playRound started', playerSelection);
-}
 
-function game (){
-    for (let i = 0; i < 5; i++){
-        let playerSelection = choice();
-        //getPlayerChoice();
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
+     if (playerScore >= 5 || computerScore >= 5){
+        gameEnd = true;
+     }
+     
+    if (playerScore >= 5) {
+        //container.style.cssText = "display: none;"
+        over.style.cssText = "display: flex;";
+        over.innerHTML = "You scored 5 points, you win the game! <br> Reload the page to play again!";
     }
+    if (computerScore >= 5) {
+        //container.style.cssText = "display: none;"
+        over.style.cssText = "display: flex";
+        over.innerHTML = "Computer scored 5 points, you lose the game! <br> Reload the page to play again!";
+    }
+     
 }
+let playerScore = 0;
+let computerScore = 0;
 
 const item1 = document.querySelector('#item1');
 item1.addEventListener('click', function(){ playRound("ROCK", getComputerChoice()); });
@@ -80,14 +90,3 @@ item2.addEventListener('click', function(){ playRound("PAPER", getComputerChoice
 
 const item3 = document.querySelector('#item3');
 item3.addEventListener('click', function(){ playRound("SCISSORS", getComputerChoice()); });
-
-const items = document.querySelectorAll('.item');
-
-/*items.forEach((items) => {
-
-  items.addEventListener('click', () => {
-    console.log('hi');
-  });
-});*/
-
-
