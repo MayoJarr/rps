@@ -1,77 +1,92 @@
 body {
-    background-image: url(img/venice.jpg);
-    background-size: cover;
-    margin: 0px;
-    padding: 0px;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 2em;
+  background-image: url(img/venice.jpg);
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 2em;
 }
-.container{
-    display: grid;
-    grid-template: 200px 100px / repeat(3, 200px);
-    grid-gap: 20px;
-    justify-content: center;
-    align-content: center;
-    height: 700px;
+.container {
+  display: grid;
+  grid-template: 200px 100px / repeat(3, 200px);
+  grid-gap: 20px;
+  justify-content: center;
+  align-content: center;
+  height: 700px;
 }
 .item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px #333;
-    text-align: center;
-    color: #333;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #333;
+  text-align: center;
+  color: #333;
 }
-.score, item{
-    width: 640px;
-    height: 100px;
+.score,
+item {
+  width: 640px;
+  height: 100px;
 }
-button {
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 1em;
-    border: none;
+button.item {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
 }
-button:hover{
-    background: #eee;
-    color: black;
+button:hover {
+  background: #eee;
+  color: black;
 }
-.game{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px;
-    height: 500px;
+.game {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: 800px;
+  height: 450px;
 
-
-    background: rgb(255, 255, 255, .9);
-    border-radius: 10px;
-    text-align: center;
-    color: #333;
-    display: none;
-    justify-content: center;
-    align-items: center;
+  background: rgb(255, 255, 255, 0.9);
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
-img{
-    width: 30px;
+img {
+  width: 30px;
 }
-button:active{
-    background: #ddd;
+button:active {
+  background: #ddd;
 }
-.aiChoice{
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translate(-5%, -50%);
-    background: rgb(255, 255, 255, 1);
-    border-radius: 10px;
-    text-align: center;
-    color: #333;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.aiChoice {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-5%, -50%);
+  background: rgb(255, 255, 255, 1);
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playAgain {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  border: none;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #333;
+  text-align: center;
+  color: #333;
+  width: 100px;
+  height: 50px;
+  display: none;
 }
